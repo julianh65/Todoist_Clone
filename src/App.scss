@@ -135,12 +135,35 @@
    /* Darkmode
      ============================================ */
    .darkmode {
+
      header {
        -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
-       background-color: #282828;
+       background-color: #491d1d;
        border-color: transparent;
+
      }
+
+     .tasks{
+       background-color: #c3c3c3;
+
+       &__list li{
+       }
+
+       h2{
+       }
+     }
+     .sidebar{
+       background-color: rgb(173, 173, 173);
+       &.active{
+         background-color: rgb(173, 173, 173);
+       }
+     }
+
+     body{
+       background-color: red;
+     }
+     
    }
    
    /* Header
@@ -157,6 +180,7 @@
      position: fixed;
      top: 0;
      width: 100%;
+
    
      @include mq('900px') {
        padding: 0 10px;
@@ -269,6 +293,7 @@
          display: -webkit-box;
          display: -ms-flexbox;
          display: flex;
+         
        }
      }
    
@@ -383,6 +408,7 @@
          font-size: 15px;
          padding-left: 0;
          padding-right: 0;
+         margin-bottom: 15px;
    
          div:nth-child(1) {
            display: -webkit-box;
@@ -413,16 +439,24 @@
            background-color: white;
          }
        }
+       span {
+         margin-left: 12px;
+       }
      }
    }
    
    /* Show Confirm Delete
      ============================================ */
    .project-delete-modal {
-     position: relative;
+     position: fixed;
+     width: 10rem;
    
      &__inner {
        @include box-overlay();
+       width: 50rem;
+       border: solid;
+       display: flex;
+       flex-direction: column;
        z-index: 99;
        width: 200px;
        padding: 10px;
@@ -440,6 +474,7 @@
    
        button {
          @include btn('50px');
+         margin-bottom: 5px;
        }
        span {
          @include cancel();
@@ -634,6 +669,7 @@
      margin-left: 15px;
    }
    
+
    /* Task Date
      ============================================ */
    .task-date {
@@ -681,6 +717,11 @@
      &__list li {
        @include task-item();
        padding: 0;
+       height: 2rem;
+       display: flex;
+       justify-content: left;
+       align-items: center;
+       padding-left: 7px;
    
        div:nth-child(1) {
          width: 100%;
